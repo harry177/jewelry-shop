@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/utils";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 
-const triggerVariants = cva("flex items-center justify-between outline-none", {
+const triggerVariants = cva("flex items-center justify-between outline-none cursor-pointer", {
   variants: {
     variant: {
       default: "gap-5 font-semibold lg:font-medium",
@@ -58,17 +58,22 @@ export const GeneralDropdown = ({
 
   return (
     <DropdownMenu.Root open={isOpen} onOpenChange={setIsOpen}>
-      <DropdownMenu.Trigger asChild>
-        <button
-          className={cn(triggerVariants({ variant: triggerVariant }))}
-          onMouseEnter={() => setIsOpen(true)}
-          onMouseDown={() => setIsOpen(false)}
-        >
+      <DropdownMenu.Trigger
+        asChild
+        style={{ pointerEvents: "auto" }}
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
+        <div className={cn(triggerVariants({ variant: triggerVariant }))}>
           {triggerName}
-          <AiOutlineDown />
-        </button>
+          {isOpen ? <AiOutlineUp /> : <AiOutlineDown />}
+        </div>
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className={cn(contentVariants({ variant: contentVariant }))}>
+      <DropdownMenu.Content
+        className={cn(contentVariants({ variant: contentVariant }))}
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
         {daMenuPoints.map((menuPoint, index) => (
           <DropdownMenu.Item key={index}>{menuPoint}</DropdownMenu.Item>
         ))}
