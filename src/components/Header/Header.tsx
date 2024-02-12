@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AiOutlineUser, AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
-import { GeneralDropdown } from "../UI/GeneralDropdown";
+import { GeneralDropdown } from "@/components/UI/GeneralDropdown";
 
 const menuItems = [
   { title: "Catalog", subItems: ["raz", "dva", "tri"] },
