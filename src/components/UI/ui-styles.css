@@ -1,0 +1,3 @@
+.SuperContent [data-radix-popper-content-wrapper] {
+    position: relative !important;
+  }
