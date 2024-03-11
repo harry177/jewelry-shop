@@ -46,10 +46,10 @@ export const Header = () => {
               />
             </button>
             <div
-              className={`absolute flex w-80 min-h-60 top-20 ${isOpen ? "left-0" : "-left-80"} shadow-md rounded-br-lg transition-all duration-300`}
+              className={`absolute flex w-80 h-80 top-20 ${isOpen ? "left-0" : "-left-80"} shadow-md rounded-br-lg transition-all duration-300`}
             >
               <nav className="flex justify-center pt-2 ml-[94px]">
-                <ul className="flex flex-col gap-5 items-start justify-evenly w-full">
+                <ul className="flex flex-col gap-5 items-start justify-start">
                   {menuItems.map((item, index) => (
                     <li key={index} className={`${index === 1 && "top-[-2px]"} flex relative`}>
                       <GeneralDropdown
@@ -67,7 +67,7 @@ export const Header = () => {
           </>
         )}
 
-        <span className="text-3xl font-semibold">J-Shop</span>
+        <Link href="/" className="text-3xl font-semibold">J-Shop</Link>
       </div>
       {!isMobile && (
         <nav className="flex justify-center">
@@ -81,7 +81,7 @@ export const Header = () => {
         </nav>
       )}
       <div className="w-32 h-10 flex justify-around items-center">
-        <Link href="/">
+        <Link href="/account">
           <AiOutlineUser className="w-5 h-5" />
         </Link>
         <Link href="/favorites">

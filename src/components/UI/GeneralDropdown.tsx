@@ -7,11 +7,11 @@ import { cn } from "@/shared/utils";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import "./ui-styles.css";
 
-const triggerVariants = cva("flex items-center justify-between outline-none cursor-pointer", {
+const triggerVariants = cva("flex items-center outline-none cursor-pointer", {
   variants: {
     variant: {
-      default: "gap-5 font-semibold text-sm lg:text-base font-medium",
-      burger: "",
+      default: "justify-between gap-5 font-semibold text-sm lg:text-base font-medium",
+      burger: "flex gap-5",
     },
   },
   defaultVariants: {
@@ -23,7 +23,7 @@ const contentVariants = cva("bg-[#ffffff] font-normal", {
   variants: {
     variant: {
       default: "w-20 shadow-md",
-      burger: "relative w-[200px]",
+      burger: "relative flex flex-col",
     },
   },
   defaultVariants: {
