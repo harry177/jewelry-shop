@@ -13,7 +13,7 @@ const buttonVariants = cva(
           default: "bg-[#000000] text-[#ffffff] hover:bg-[#eb34cc] border-0",
         },
         size: {
-          default: "px-4 -ml-10 w-48 h-12 flex-shrink-0 text-lg",
+          default: "px-4 w-48 h-12 flex-shrink-0 text-lg",
         },
       },
       defaultVariants: {

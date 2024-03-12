@@ -6,6 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/utils";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import "./ui-styles.css";
+import Link from "next/link";
 
 const triggerVariants = cva("flex items-center outline-none cursor-pointer", {
   variants: {
@@ -19,11 +20,11 @@ const triggerVariants = cva("flex items-center outline-none cursor-pointer", {
   },
 });
 
-const contentVariants = cva("bg-[#ffffff] font-normal", {
+const contentVariants = cva("flex flex-col bg-[#ffffff] font-normal", {
   variants: {
     variant: {
-      default: "w-20 shadow-md",
-      burger: "relative flex flex-col",
+      default: "w-32 shadow-md p-2",
+      burger: "relative",
     },
   },
   defaultVariants: {
@@ -31,10 +32,10 @@ const contentVariants = cva("bg-[#ffffff] font-normal", {
   },
 });
 
-const itemVariants = cva("inline-flex items-center text-[13px] px-[5px] rounded-[3px]", {
+const itemVariants = cva("inline-flex items-center text-[13px] px-[5px] rounded-[3px] outline-none", {
   variants: {
     variant: {
-      default: "pl-[10px] mb-[10px] mr-[20px] lg:text-[10px] lgb:text-[13px]",
+      default: "pl-[10px] mb-[10px] mr-[20px] lg:text-[10px] lgb:text-[13px] hover:scale-125 transition-all",
       burger: "w-[120px] pl-[10px] mb-[10px] mr-[20px]",
     },
   },
@@ -49,6 +50,7 @@ interface GeneralDropdownProps {
   itemVariant?: VariantProps<typeof itemVariants>["variant"];
   triggerName: string;
   daMenuPoints: string[];
+  baseUrl?: string[];
 }
 
 export const GeneralDropdown = ({
@@ -57,6 +59,7 @@ export const GeneralDropdown = ({
   triggerVariant = "default",
   contentVariant = "default",
   itemVariant = "default",
+  baseUrl
 }: GeneralDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -82,7 +85,7 @@ export const GeneralDropdown = ({
         >
           {daMenuPoints.map((menuPoint, index) => (
             <DropdownMenu.Item key={index} className={cn(itemVariants({ variant: itemVariant }))}>
-              {menuPoint}
+              <Link href={baseUrl ? baseUrl[index] : "/"}>{menuPoint}</Link>
             </DropdownMenu.Item>
           ))}
         </DropdownMenu.Content>

@@ -7,9 +7,13 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { GeneralDropdown } from "@/components/UI/GeneralDropdown";
 
 const menuItems = [
-  { title: "Catalog", subItems: ["raz", "dva", "tri"] },
-  { title: "Collections", subItems: ["raz", "dva", "tri"] },
-  { title: "Certificates", subItems: ["raz", "dva", "tri"] },
+  {
+    title: "Catalog",
+    subItems: ["All products", "Rings", "Necklaces"],
+    baseUrl: ["/catalog", "/catalog/rings", "/catalog/necklaces"],
+  },
+  { title: "Collections", subItems: ["Winter", "Spring", "Summer"] },
+  { title: "Certificates", subItems: ["500$", "1000$", "3000$"] },
 ];
 
 const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`;
@@ -58,6 +62,7 @@ export const Header = () => {
                         itemVariant="burger"
                         triggerName={item.title}
                         daMenuPoints={item.subItems}
+                        baseUrl={item.baseUrl}
                       />
                     </li>
                   ))}
@@ -67,14 +72,16 @@ export const Header = () => {
           </>
         )}
 
-        <Link href="/" className="text-3xl font-semibold">J-Shop</Link>
+        <Link href="/" className="text-3xl font-semibold">
+          J-Shop
+        </Link>
       </div>
       {!isMobile && (
         <nav className="flex justify-center">
           <ul className="flex justify-between gap-[7vw] lg:gap-[12vw]">
             {menuItems.map((item, index) => (
               <li key={index} className="group relative flex ">
-                <GeneralDropdown triggerName={item.title} daMenuPoints={item.subItems} />
+                <GeneralDropdown triggerName={item.title} daMenuPoints={item.subItems} baseUrl={item.baseUrl}/>
               </li>
             ))}
           </ul>
