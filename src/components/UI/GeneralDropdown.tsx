@@ -20,11 +20,11 @@ const triggerVariants = cva("flex items-center outline-none cursor-pointer", {
   },
 });
 
-const contentVariants = cva("flex flex-col bg-[#ffffff] font-normal", {
+const contentVariants = cva("flex flex-col justify-start bg-[#ffffff] font-normal", {
   variants: {
     variant: {
       default: "w-32 shadow-md p-2",
-      burger: "relative",
+      burger: "relative pt-3",
     },
   },
   defaultVariants: {
@@ -32,17 +32,21 @@ const contentVariants = cva("flex flex-col bg-[#ffffff] font-normal", {
   },
 });
 
-const itemVariants = cva("inline-flex items-center text-[13px] px-[5px] rounded-[3px] outline-none", {
-  variants: {
-    variant: {
-      default: "pl-[10px] mb-[10px] mr-[20px] lg:text-[10px] lgb:text-[13px] hover:scale-125 transition-all",
-      burger: "w-[120px] pl-[10px] mb-[10px] mr-[20px]",
+const itemVariants = cva(
+  "inline-flex items-center text-[13px] px-[5px] rounded-[3px] outline-none",
+  {
+    variants: {
+      variant: {
+        default:
+          "pl-[10px] mb-[10px] mr-[20px] lg:text-[10px] lgb:text-[13px] hover:scale-125 transition-all",
+        burger: "w-auto pl-[10px] mb-[10px] mr-[20px]",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
     },
   },
-  defaultVariants: {
-    variant: "default",
-  },
-});
+);
 
 interface GeneralDropdownProps {
   triggerVariant?: VariantProps<typeof triggerVariants>["variant"];
@@ -59,7 +63,7 @@ export const GeneralDropdown = ({
   triggerVariant = "default",
   contentVariant = "default",
   itemVariant = "default",
-  baseUrl
+  baseUrl,
 }: GeneralDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -79,6 +83,7 @@ export const GeneralDropdown = ({
           </div>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content
+          sideOffset={contentVariant === "burger" ? -20 : 0}
           className={cn(contentVariants({ variant: contentVariant }))}
           onMouseEnter={() => triggerVariant === "default" && setIsOpen(true)}
           onMouseLeave={() => triggerVariant === "default" && setIsOpen(false)}

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { AiOutlineUser, AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { GeneralDropdown } from "@/components/UI/GeneralDropdown";
+import { HeaderIcons } from "../HeaderIcons/HeaderIcons";
 
 const menuItems = [
   {
@@ -50,24 +50,27 @@ export const Header = () => {
               />
             </button>
             <div
-              className={`absolute flex w-80 h-80 top-20 ${isOpen ? "left-0" : "-left-80"} shadow-md rounded-br-lg transition-all duration-300`}
+              className={`absolute flex w-80 min-h-80 top-20 ${isOpen ? "left-0" : "-left-80"} bg-[#ffffff] shadow-md rounded-br-lg transition-all duration-300 z-50`}
             >
-              <nav className="flex justify-center pt-2 ml-[94px]">
-                <ul className="flex flex-col gap-5 items-start justify-start">
-                  {menuItems.map((item, index) => (
-                    <li key={index} className={`${index === 1 && "top-[-2px]"} flex relative`}>
-                      <GeneralDropdown
-                        triggerVariant="burger"
-                        contentVariant="burger"
-                        itemVariant="burger"
-                        triggerName={item.title}
-                        daMenuPoints={item.subItems}
-                        baseUrl={item.baseUrl}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </nav>
+              <div className="flex flex-col gap-5 ml-[94px]">
+                <nav className="flex justify-center">
+                  <ul className="flex flex-col gap-5 items-start justify-start">
+                    {menuItems.map((item, index) => (
+                      <li key={index} className={`${index === 1 && "top-[-2px]"} flex relative`}>
+                        <GeneralDropdown
+                          triggerVariant="burger"
+                          contentVariant="burger"
+                          itemVariant="burger"
+                          triggerName={item.title}
+                          daMenuPoints={item.subItems}
+                          baseUrl={item.baseUrl}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+                <HeaderIcons />
+              </div>
             </div>
           </>
         )}
@@ -81,23 +84,17 @@ export const Header = () => {
           <ul className="flex justify-between gap-[7vw] lg:gap-[12vw]">
             {menuItems.map((item, index) => (
               <li key={index} className="group relative flex ">
-                <GeneralDropdown triggerName={item.title} daMenuPoints={item.subItems} baseUrl={item.baseUrl}/>
+                <GeneralDropdown
+                  triggerName={item.title}
+                  daMenuPoints={item.subItems}
+                  baseUrl={item.baseUrl}
+                />
               </li>
             ))}
           </ul>
         </nav>
       )}
-      <div className="w-32 h-10 flex justify-around items-center">
-        <Link href="/account">
-          <AiOutlineUser className="w-5 h-5" />
-        </Link>
-        <Link href="/favorites">
-          <AiOutlineHeart className="w-5 h-5" />
-        </Link>
-        <Link href="/cart">
-          <AiOutlineShoppingCart className="w-5 h-5" />
-        </Link>
-      </div>
+      <HeaderIcons />
     </header>
   );
 };

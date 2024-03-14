@@ -10,6 +10,7 @@ export const HomeCatalogSection = () => {
       transition: {
         type: "spring",
         bounce: 0.4,
+        delay: 0.5,
         duration: 1.2,
       },
     },
@@ -19,11 +20,11 @@ export const HomeCatalogSection = () => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true }}
-      className="flex justify-start items-start w-full h-96 bg-[#03fc5e]"
+      className="flex justify-start items-start w-full h-96 pb-24 bg-[#03fc5e] bg-clip-content"
     >
-      <motion.h1 variants={cardVariants} className="ml-24">
+      <motion.h2 variants={cardVariants} className="ml-24">
         Helllloooo
-      </motion.h1>
+      </motion.h2>
     </motion.section>
   );
 };
