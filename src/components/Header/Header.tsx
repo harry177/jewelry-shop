@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { GeneralDropdown } from "@/components/UI/GeneralDropdown";
-import { HeaderIcons } from "../HeaderIcons/HeaderIcons";
+import { HeaderIcons } from "@/components/HeaderIcons/HeaderIcons";
 
 const menuItems = [
   {
@@ -12,7 +12,17 @@ const menuItems = [
     subItems: ["All products", "Rings", "Necklaces"],
     baseUrl: ["/catalog", "/catalog/rings", "/catalog/necklaces"],
   },
-  { title: "Collections", subItems: ["Winter", "Spring", "Summer"] },
+  {
+    title: "Collections",
+    subItems: ["All collections", "Winter", "Spring", "Summer", "Autumn"],
+    baseUrl: [
+      "/collections",
+      "/collections/winter",
+      "/collections/spring",
+      "/collections/summer",
+      "/collections/autumn",
+    ],
+  },
   { title: "Certificates", subItems: ["500$", "1000$", "3000$"] },
 ];
 

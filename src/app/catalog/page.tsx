@@ -8,7 +8,6 @@ export default async function Catalog() {
   noStore();
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const { rows } = await sql`SELECT * FROM products`;
-  //console.log(rows);
 
   
   return (

@@ -14,21 +14,7 @@ import "../UI/ui-styles.css";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { Card, CardHeader, CardTitle } from "@/components/UI/GeneralCard";
 
-const collectionItems = ["Winter", "Spring", "Summer", "Fall"];
-const collectionImages = [
-  "winter.jpeg",
-  "winter.jpeg",
-  "winter.jpeg",
-  "winter.jpeg",
-];
-const collectionHovered = [
-  "",
-  "",
-  "",
-  "",
-];
-
-export const HomeCarousel = () => {
+export const HomeCarousel = ({ cols }: any) => {
   const [hoverStates, setHoverStates] = useState<{ [key: number]: boolean }>({});
 
   const handleHover = (index: number, isHovered: boolean) => {
@@ -48,12 +34,10 @@ export const HomeCarousel = () => {
       slidesOffsetAfter={50}
       watchOverflow
       scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
       className="h-[580px] md:h-[47vw] lgb:h-[580px] overflow-clip flex gap-[20px]"
     >
-      {collectionItems.map((item, index) => (
-        <SwiperSlide key={index}>
+      {cols.map((item: any, index: number) => (
+        <SwiperSlide key={item.id}>
           <Card
             variant="default"
             size="default"
@@ -62,12 +46,8 @@ export const HomeCarousel = () => {
             onMouseLeave={() => handleHover(index, false)}
           >
             <Image
-              src={
-                hoverStates[index]
-                  ? `/img/${collectionHovered[index]}`
-                  : `/img/${collectionImages[index]}`
-              }
-              alt=""
+              src={hoverStates[index] ? item.col_hover : `${item.col_image}`}
+              alt="collection"
               fill
               sizes="100%"
               className="rounded-[30px] object-cover"
@@ -81,10 +61,8 @@ export const HomeCarousel = () => {
               <span>new</span>
               <span className="text-xs mt-1.5 ml-2 font-light">16.12.23</span>
             </CardHeader>
-            <CardTitle
-              className="top-[90%] md:top-14 text-[18px] md:text-[25px] lg:text-[32px] w-20"
-            >
-              {item}
+            <CardTitle className="top-[90%] md:top-14 text-[18px] md:text-[25px] lg:text-[32px] w-20">
+              {item.name}
             </CardTitle>
           </Card>
         </SwiperSlide>

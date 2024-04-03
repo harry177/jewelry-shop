@@ -1,9 +1,9 @@
 "use client";
 
+import React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/utils";
-import React from "react";
 
 const buttonVariants = cva(
     "whitespace-nowrap rounded-[30px] font-medium lowercase ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
