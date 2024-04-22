@@ -1,26 +1,30 @@
 .SuperContent [data-radix-popper-content-wrapper] {
-    position: relative !important;
-  }
+  position: relative !important;
+}
 
-  .swiper-button-prev,
+.swiper-button-prev,
 .swiper-button-next {
   color: white;
 }
 
+.swiper-button-next {
+  right: 1vw;
+}
+
 .swiper-scrollbar {
-  max-width: 90vw!important;
+  max-width: 90vw !important;
   margin-left: 5%;
   margin-right: 5%;
 }
 @media (max-width: 1249px) {
   .swiper-scrollbar {
-    max-width: 85vw!important;
+    max-width: 85vw !important;
     margin-left: 7vw;
   }
 }
 @media (max-width: 767px) {
   .swiper-scrollbar {
-    max-width: 80vw!important;
+    max-width: 80vw !important;
     margin-left: 12vw;
   }
 }

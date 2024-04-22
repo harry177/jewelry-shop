@@ -55,7 +55,7 @@ export const HomeCarousel = ({ cols }: any) => {
             <div
               className={`${
                 hoverStates[index] ? "opacity-100" : "opacity-0"
-              } w-[110.586px] h-[80.8px] bg-[url("/svg/collection-icon.svg")] bg-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition ease-in-out duration-300`}
+              } w-[110.586px] h-[80.8px] bg-contain absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition ease-in-out duration-300`}
             ></div>
             <CardHeader className="bottom-[50px] md:bottom-auto">
               <span>new</span>

@@ -9,12 +9,13 @@ import { HomeCertSection } from "@/components/HomeCertSection/HomeCertSection";
 
 export default async function Home() {
   noStore();
-  const { rows } = await sql`SELECT * FROM collections`;
+  const { rows: collections } = await sql`SELECT * FROM collections`;
+  const { rows: catalog } = await sql`SELECT * FROM catalog_categories`;
   return (
     <div>
       <HomeHeroSection />
-      <HomeCollectionSection cols={rows} />
-      <HomeCatalogSection />
+      <HomeCollectionSection cols={collections} />
+      <HomeCatalogSection cats={catalog} />
       <HomeCertSection />
     </div>
   );
