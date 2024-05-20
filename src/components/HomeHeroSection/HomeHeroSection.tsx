@@ -37,11 +37,26 @@ export const HomeHeroSection = () => {
       viewport={{ once: true }}
       className="flex justify-center items-center w-full h-[635px] pb-24 bg-gradient-to-r from-pink-100 via-white to-pink-100 bg-radial-gradient bg-clip-content"
     >
-      <motion.h1 variants={titleVariants} className="absolute text-5xl text-[#f5589c] font-bold mt-[-300px] z-1">
+      <motion.h1
+        variants={titleVariants}
+        className="absolute text-5xl text-[#f5589c] font-bold mt-[-300px] z-1"
+      >
         SPRING SALE
       </motion.h1>
-      <motion.span variants={spanVariants} className="absolute text-5xl text-[#f5589c] font-bold mt-[-100px] z-1">70%</motion.span>
-      <Image src="/img/hero-banner.jpg" alt="spring" width={900} height={900} sizes="100vw" />
+      <motion.span
+        variants={spanVariants}
+        className="absolute text-5xl text-[#f5589c] font-bold mt-[-100px] z-1"
+      >
+        70%
+      </motion.span>
+      <Image
+        src="/img/hero-banner.jpg"
+        alt="spring"
+        priority
+        width={900}
+        height={500}
+        style={{ height: "auto" }}
+      />
     </motion.section>
   );
 };

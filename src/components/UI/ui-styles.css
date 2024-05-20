@@ -1,4 +1,4 @@
-.SuperContent [data-radix-popper-content-wrapper] {
+.burger-dropdown [data-radix-popper-content-wrapper] {
   position: relative !important;
 }
 
@@ -8,17 +8,16 @@
 }
 
 .swiper-button-next {
-  right: 1vw;
+  right: 1%;
 }
 
 .swiper-scrollbar {
-  max-width: 90vw !important;
+  max-width: 85% !important;
   margin-left: 5%;
   margin-right: 5%;
 }
 @media (max-width: 1249px) {
   .swiper-scrollbar {
-    max-width: 85vw !important;
     margin-left: 7vw;
   }
 }
