@@ -23,6 +23,7 @@ const cardVariants = cva("flex cursor-pointer", {
       catalogSmall:
         "w-[49.5%] md:w-[32.9%] lg:w-[24.6%] lgxx:w-[332px] h-[290px] md:h-[375.71px] lg:h-[355px] lgbplus:h-[490px]",
       mainAbout: "w-[600px] h-full rounded-lg",
+      authForm: "flex-col w-[40%] h-[40%]"
     },
   },
   defaultVariants: {
