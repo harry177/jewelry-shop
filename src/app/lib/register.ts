@@ -47,5 +47,5 @@ export const register = async (formData: SignUpData) => {
     return "Database Error: Failed to Create Account.";
   }
 
-  redirect("/signin");
+  redirect("/login");
 };

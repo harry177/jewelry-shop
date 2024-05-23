@@ -14,9 +14,9 @@ import {
   FormMessage,
 } from "@/components/UI/GeneralForm";
 import { Input } from "@/components/UI/GeneralInput";
-import { register } from "@/app/lib/actions";
+import { register } from "@/app/lib/register";
 
-const formSchema = z
+const signupSchema = z
   .object({
     username: z
       .string({ required_error: "This field is required." })
@@ -50,8 +50,8 @@ const formSchema = z
   });
 
 export const SignUpForm = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof signupSchema>>({
+    resolver: zodResolver(signupSchema),
     defaultValues: {
       username: "",
       email: "",
@@ -60,7 +60,7 @@ export const SignUpForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
+  const onSubmit = (values: z.infer<typeof signupSchema>) => {
     console.log(values);
     register(values);
   };
