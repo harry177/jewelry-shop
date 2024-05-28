@@ -14,7 +14,8 @@ import {
   FormMessage,
 } from "@/components/UI/GeneralForm";
 import { Input } from "@/components/UI/GeneralInput";
-import { login } from "@/app/lib/login";
+import { login, redirectHome } from "@/app/lib/login";
+import { redirect } from "next/navigation";
 
 const loginSchema = z.object({
   email: z
@@ -39,9 +40,12 @@ export const LoginForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof loginSchema>) => {
-    const result = login(values);
-    console.log(result);
+  const onSubmit = async (values: z.infer<typeof loginSchema>) => {
+    const result = await login(values);
+
+    console.log(result)
+
+    redirectHome()
   };
 
   return (
