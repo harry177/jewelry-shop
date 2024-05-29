@@ -1,25 +1,16 @@
 "use server";
 
 import bcrypt from "bcrypt";
-import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
-import { sql } from "@vercel/postgres";
 import { redirect } from "next/navigation";
+import { sql } from "@vercel/postgres";
+import { encrypt } from "@/app/lib/encrypt";
+
 
 interface LoginData {
   email: string;
   password: string;
 }
-
-const key = new TextEncoder().encode(process.env.JWT_SECRET);
-
-export const encrypt = async (payload: any) => {
-  return await new SignJWT(payload)
-    .setProtectedHeader({ alg: "HS256" })
-    .setIssuedAt()
-    .setExpirationTime("10 sec from now")
-    .sign(key);
-};
 
 export const login = async (formData: LoginData) => {
   const { email, password } = formData;
@@ -41,11 +32,12 @@ export const login = async (formData: LoginData) => {
       return { error: "Invalid password", status: 401 };
     }
 
-    const expires = new Date(Date.now() + 10 * 1000);
+    const expires = new Date(Date.now() + 30 * 1000);
     const session = await encrypt({ user, expires });
 
     cookies().set("session", session, {
       httpOnly: true,
+      expires: expires
     });
 
     return user;

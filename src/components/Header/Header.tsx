@@ -7,7 +7,7 @@ import { HeaderNavMenu } from "@/components/HeaderNavMenu/HeaderNavMenu";
 import { HeaderBurger } from "@/components/HeaderBurger/HeaderBurger";
 import { menuItems } from "@/shared/constants";
 
-export const Header = () => {
+export const Header = ({user}: {user: string | null}) => {
   const isMobile = useMediaQuery("(max-width: 767px)");
   
   return (
@@ -29,7 +29,7 @@ export const Header = () => {
           </ul>
         </nav>
       )}
-      <HeaderIcons />
+      <HeaderIcons user={user} />
     </header>
   );
 };
