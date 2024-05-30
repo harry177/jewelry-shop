@@ -37,7 +37,7 @@ export const login = async (formData: LoginData) => {
 
     cookies().set("session", session, {
       httpOnly: true,
-      expires: expires
+      expires: expires,
     });
 
     return user;
