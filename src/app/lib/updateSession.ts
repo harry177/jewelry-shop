@@ -5,6 +5,7 @@ import { encrypt } from "@/app/lib/encrypt";
 import { decrypt } from "@/app/lib/decrypt";
 
 export const updateSession = async (request: NextRequest) => {
+  
   const session = request.cookies.get("session")?.value;
   if (!session) return;
 
