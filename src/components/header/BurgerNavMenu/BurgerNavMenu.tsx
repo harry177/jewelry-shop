@@ -8,8 +8,8 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/UI/GeneralDropdown";
-import "../UI/ui-styles.css"
+} from "@/components/ui/GeneralDropdown";
+import "@/components/ui/ui-styles.css";
 
 export interface NavDataProps {
   title: string;

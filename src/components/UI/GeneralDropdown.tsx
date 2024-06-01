@@ -1,7 +1,7 @@
 import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { cn } from "@/shared/utils";
+import { cn } from "@/utils";
 
 const triggerVariants = cva("flex items-center outline-none cursor-pointer", {
   variants: {

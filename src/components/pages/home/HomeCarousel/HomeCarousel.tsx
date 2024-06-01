@@ -9,10 +9,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import "../UI/ui-styles.css";
+import "@/components/ui/ui-styles.css";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { Card, CardHeader, CardTitle } from "@/components/UI/GeneralCard";
+import { Card, CardHeader, CardTitle } from "@/components/ui/GeneralCard";
 
 export const HomeCarousel = ({ cols }: any) => {
   const [hoverStates, setHoverStates] = useState<{ [key: number]: boolean }>({});

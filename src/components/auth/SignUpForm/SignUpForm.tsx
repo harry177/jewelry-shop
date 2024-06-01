@@ -3,8 +3,8 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { GeneralButton } from "@/components/UI/GeneralButton";
-import { Card, CardTitle, CardContent } from "@/components/UI/GeneralCard";
+import { GeneralButton } from "@/components/ui/GeneralButton";
+import { Card, CardTitle, CardContent } from "@/components/ui/GeneralCard";
 import {
   Form,
   FormControl,
@@ -12,8 +12,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/UI/GeneralForm";
-import { Input } from "@/components/UI/GeneralInput";
+} from "@/components/ui/GeneralForm";
+import { Input } from "@/components/ui/GeneralInput";
 import { register } from "@/app/lib/register";
 
 const signupSchema = z

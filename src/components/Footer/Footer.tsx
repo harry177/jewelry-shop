@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GeneralButton } from "@/components/UI/GeneralButton";
+import { GeneralButton } from "@/components/ui/GeneralButton";
 
 export const Footer = () => {
   return (

@@ -1,4 +1,4 @@
-import { CatalogCore } from "@/components/CatalogCore/CatalogCore";
+import { CatalogCore } from "@/components/pages/catalog/CatalogCore/CatalogCore";
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 import { Suspense, lazy } from "react";

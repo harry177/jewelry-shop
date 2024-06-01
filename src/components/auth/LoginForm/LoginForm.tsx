@@ -3,8 +3,8 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { GeneralButton } from "@/components/UI/GeneralButton";
-import { Card, CardTitle, CardContent } from "@/components/UI/GeneralCard";
+import { GeneralButton } from "@/components/ui/GeneralButton";
+import { Card, CardTitle, CardContent } from "@/components/ui/GeneralCard";
 import {
   Form,
   FormControl,
@@ -12,8 +12,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/UI/GeneralForm";
-import { Input } from "@/components/UI/GeneralInput";
+} from "@/components/ui/GeneralForm";
+import { Input } from "@/components/ui/GeneralInput";
 import { login, redirectHome } from "@/app/lib/login";
 import { redirect } from "next/navigation";
 
@@ -24,11 +24,9 @@ const loginSchema = z.object({
       message: "This field is required.",
     })
     .email({ message: "It should be valid email." }),
-  password: z
-    .string()
-    .min(1, {
-      message: "This field is required.",
-    })
+  password: z.string().min(1, {
+    message: "This field is required.",
+  }),
 });
 
 export const LoginForm = () => {
@@ -43,9 +41,9 @@ export const LoginForm = () => {
   const onSubmit = async (values: z.infer<typeof loginSchema>) => {
     const result = await login(values);
 
-    console.log(result)
+    console.log(result);
 
-    redirectHome()
+    redirectHome();
   };
 
   return (

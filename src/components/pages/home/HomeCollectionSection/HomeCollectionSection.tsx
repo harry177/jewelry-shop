@@ -1,7 +1,7 @@
 "use client";
 
 import { QueryResultRow } from "@vercel/postgres";
-import { HomeCarousel } from "@/components/HomeCarousel/HomeCarousel";
+import { HomeCarousel } from "@/components/pages/home/HomeCarousel/HomeCarousel";
 
 interface HomeCollectionProps {
   cols: QueryResultRow[];

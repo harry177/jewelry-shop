@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { QueryResultRow } from "@vercel/postgres";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { Card, CardTitle } from "@/components/UI/GeneralCard";
+import { Card, CardTitle } from "@/components/ui/GeneralCard";
 
 interface HomeCatalogProps {
   cats: QueryResultRow[];

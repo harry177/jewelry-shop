@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { HeaderIcons } from "@/components/HeaderIcons/HeaderIcons";
-import { HeaderNavMenu } from "@/components/HeaderNavMenu/HeaderNavMenu";
-import { HeaderBurger } from "@/components/HeaderBurger/HeaderBurger";
-import { menuItems } from "@/shared/constants";
+import { HeaderIcons } from "@/components/header/HeaderIcons/HeaderIcons";
+import { HeaderNavMenu } from "@/components/header/HeaderNavMenu/HeaderNavMenu";
+import { HeaderBurger } from "@/components/header/HeaderBurger/HeaderBurger";
+import { menuItems } from "@/constants";
 
-export const Header = ({user}: {user: string | null}) => {
+export const Header = ({ user }: { user: string | null }) => {
   const isMobile = useMediaQuery("(max-width: 767px)");
-  
+
   return (
     <header className="flex justify-around items-center h-20 shadow-md">
       <div className="flex justify-between items-center gap-5">

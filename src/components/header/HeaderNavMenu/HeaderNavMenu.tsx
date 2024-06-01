@@ -8,12 +8,12 @@ import {
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
-} from "@/components/UI/GeneralDropdown";
+} from "@/components/ui/GeneralDropdown";
 
 export interface NavDataProps {
   title: string;
   subItems: string[];
-  baseUrl?: string[]; 
+  baseUrl?: string[];
 }
 
 export const HeaderNavMenu = ({ item }: { item: NavDataProps }) => {
@@ -35,12 +35,11 @@ export const HeaderNavMenu = ({ item }: { item: NavDataProps }) => {
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
-        {
-          item.subItems.map((child, index) => (
-            <DropdownMenuItem key={index} itemVariant="default">
-              <Link href={item.baseUrl ? item.baseUrl[index] : "/"}>{child}</Link>
-            </DropdownMenuItem>
-          ))}
+        {item.subItems.map((child, index) => (
+          <DropdownMenuItem key={index} itemVariant="default">
+            <Link href={item.baseUrl ? item.baseUrl[index] : "/"}>{child}</Link>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

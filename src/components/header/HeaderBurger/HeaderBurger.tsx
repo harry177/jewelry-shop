@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { HeaderIcons } from "@/components/HeaderIcons/HeaderIcons";
-import { BurgerNavMenu } from "@/components/BurgerNavMenu/BurgerNavMenu";
-import { menuItems } from "@/shared/constants";
+import { HeaderIcons } from "@/components/header/HeaderIcons/HeaderIcons";
+import { BurgerNavMenu } from "@/components/header/BurgerNavMenu/BurgerNavMenu";
+import { menuItems } from "@/constants";
 
 const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`;
 
@@ -41,7 +41,7 @@ export const HeaderBurger = () => {
             <ul className="flex flex-col gap-5 items-start justify-start">
               {menuItems.map((item, index) => (
                 <li key={index} className={`${index === 1 && "top-[-2px]"} flex relative`}>
-                  <BurgerNavMenu item={item}/>
+                  <BurgerNavMenu item={item} />
                 </li>
               ))}
             </ul>
