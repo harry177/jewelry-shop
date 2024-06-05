@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { GeneralButton } from "@/components/ui/GeneralButton";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-  CardDescription,
 } from "@/components/ui/GeneralCard";
 
 interface ProductCardProps {
@@ -15,11 +15,18 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ image, name }: ProductCardProps) => {
+  const [hovered, setHovered] = useState(false);
+
   return (
-    <Card>
+    <Card
+      variant="catalogItems"
+      size="catalogSmall"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <CardContent className="flex flex-col">
         <Link href="/">
-          <Image src={image} alt="" width={300} height={300}></Image>
+          <Image src={image[0]} alt="" width={300} height={300}></Image>
         </Link>
         <CardTitle className="text-black">{name}</CardTitle>
         <CardHeader></CardHeader>
@@ -30,7 +37,11 @@ export const ProductCard = ({ image, name }: ProductCardProps) => {
             <GeneralButton></GeneralButton>
           </div>
         </div>
-        <CardDescription></CardDescription>
+        <div className={`${hovered ? "flex" : "hidden"} flex-col`}>
+          <div>Product code</div>
+          <div>Product type</div>
+          <div>Gender</div>
+        </div>
       </CardContent>
     </Card>
   );
