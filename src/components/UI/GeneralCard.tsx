@@ -11,6 +11,7 @@ const cardVariants = cva("flex cursor-pointer", {
       catalogMain: "text-[#ffffff] border-0 rounded-[30px]",
       mainNewItems: "text-[#000000] border border-[#000000] rounded-[30px]",
       catalogItems: "text-[#000000] rounded-[30px] border border-[#000000]",
+      auto: "flex justify-center text-[#000000] rounded-[30px] border border-[#000000]",
     },
     size: {
       default: "w-[30vw] md:w-[40vw] lgb:w-[500px] h-[550px] md:h-[44vw] lgb:h-[550px] rounded-lg",
@@ -23,7 +24,8 @@ const cardVariants = cva("flex cursor-pointer", {
       catalogSmall:
         "w-[49.5%] md:w-[32.9%] lg:w-[24.6%] lgxx:w-[332px] h-fit",
       mainAbout: "w-[600px] h-full rounded-lg",
-      authForm: "flex-col w-[40%] h-[40%]"
+      authForm: "flex-col w-[40%] h-[40%]",
+      auto: "w-full bg-white",
     },
   },
   defaultVariants: {
