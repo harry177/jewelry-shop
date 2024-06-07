@@ -18,7 +18,7 @@ const triggerVariants = cva("flex items-center outline-none cursor-pointer", {
 const contentVariants = cva("flex flex-col justify-start bg-[#ffffff] font-normal", {
   variants: {
     variant: {
-      default: "w-32 shadow-md p-2",
+      default: "w-32 shadow-md p-2 z-50",
       burger: "relative pt-3",
     },
   },

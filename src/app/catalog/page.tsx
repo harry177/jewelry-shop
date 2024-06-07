@@ -6,12 +6,11 @@ const Loading = lazy(() => import("./loading"));
 
 export default async function Catalog() {
   noStore();
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const { rows } = await sql`SELECT * FROM products`;
 
   return (
     <>
-      <span>Catalog</span>
       <Suspense fallback={<Loading />}>
         <CatalogCore data={rows} />
       </Suspense>
