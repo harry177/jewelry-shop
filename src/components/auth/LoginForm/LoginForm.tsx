@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { GeneralButton } from "@/components/ui/GeneralButton";
+import { Button } from "@/components/ui/GeneralButton";
 import { Card, CardTitle, CardContent } from "@/components/ui/GeneralCard";
 import {
   Form,
@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/GeneralForm";
 import { Input } from "@/components/ui/GeneralInput";
 import { login, redirectHome } from "@/app/lib/login";
-import { redirect } from "next/navigation";
 
 const loginSchema = z.object({
   email: z
@@ -81,7 +80,7 @@ export const LoginForm = () => {
                 </FormItem>
               )}
             />
-            <GeneralButton type="submit">Submit</GeneralButton>
+            <Button type="submit">Submit</Button>
           </form>
         </Form>
       </CardContent>

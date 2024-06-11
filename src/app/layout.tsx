@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { JWTPayload } from "jose";
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header/Header";
 import { getSession } from "@/app/lib/getSession";
+import { decrypt } from "@/app/lib/decrypt";
 import "./globals.css";
-import { decrypt } from "./lib/decrypt";
-import { JWTPayload } from "jose";
 
 const inter = Inter({ subsets: ["latin"] });
 

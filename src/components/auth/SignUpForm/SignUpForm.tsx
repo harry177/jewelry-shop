@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { GeneralButton } from "@/components/ui/GeneralButton";
+import { Button } from "@/components/ui/GeneralButton";
 import { Card, CardTitle, CardContent } from "@/components/ui/GeneralCard";
 import {
   Form,
@@ -126,7 +126,7 @@ export const SignUpForm = () => {
                 </FormItem>
               )}
             />
-            <GeneralButton type="submit">Submit</GeneralButton>
+            <Button type="submit">Submit</Button>
           </form>
         </Form>
       </CardContent>

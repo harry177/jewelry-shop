@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { GeneralButton } from "@/components/ui/GeneralButton";
+import { Button } from "@/components/ui/GeneralButton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/GeneralCard";
 
 interface ProductCardProps {
@@ -36,7 +36,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
             <div></div>
             <div className="flex">
               <div className="w-[20%]"></div>
-              <GeneralButton>Details</GeneralButton>
+              <Button>Details</Button>
             </div>
           </div>
           <div className={`${hovered ? "flex" : "hidden"} flex-col justify-start`}>

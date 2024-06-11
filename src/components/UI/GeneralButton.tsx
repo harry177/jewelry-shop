@@ -29,7 +29,7 @@ const buttonVariants = cva(
   asChild?: boolean;
 }
 
-export const GeneralButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
@@ -37,4 +37,4 @@ export const GeneralButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
-GeneralButton.displayName = "Button";
+Button.displayName = "Button";

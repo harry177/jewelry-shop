@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { GeneralButton } from "@/components/ui/GeneralButton";
+import { Button } from "@/components/ui/GeneralButton";
 
 export const Footer = () => {
   return (
@@ -23,7 +23,7 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col justify-center items-center w-[30%] gap-5">
         <span>Subscribtion</span>
-        <GeneralButton>Example</GeneralButton>
+        <Button>Example</Button>
       </div>
       <div className="flex flex-col jusify-between w-[20%] gap-3">
         <span>Contacts</span>

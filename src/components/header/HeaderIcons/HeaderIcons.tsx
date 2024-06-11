@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AiOutlineUser, AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 
-export const HeaderIcons = ({user}: {user: string | null}) => {
+export const HeaderIcons = ({user}: {user?: string | null}) => {
   return (
     <div className="flex flex-col">
       {user && 
