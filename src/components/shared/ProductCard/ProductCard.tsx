@@ -27,7 +27,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         className={`${hovered ? 'absolute' : 'z-0'}`}
       >
         <CardContent className="flex flex-col">
-          <Link href="/" className="flex justify-center">
+          <Link href={`/catalog/${product.name.toLowerCase().split(' ').join('-')}`} className="flex justify-center">
             <Image src={product.images[0]} alt="" width={220} height={220}></Image>
           </Link>
           <CardTitle className="h-10 text-black">{product.name}</CardTitle>
